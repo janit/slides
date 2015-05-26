@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Why eZ Platform</title>
+
+		<meta name="description" content="On What makes eZ Platform Great">
+		<meta name="author" content="André Rømcke">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="../../reval.js-3.1/css/reveal.css">
+		<link rel="stylesheet" href="../../reval.js-3.1/css/theme/white.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="../../reval.js-3.1/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../reval.js-3.1/css/print/pdf.css' : '../../reval.js-3.1/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../../reval.js-3.1/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+    <!-- Press '?' for keyboard shortcuts -->
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Why eZ Platform?</h1>
+					<p>
+						On what makes eZ Platform great!
+					</p>
+					<p>
+						<em><small>By <a href="http://twitter.com/andrerom">@andrerom</a>, VP Engineering at <a href="http://ez.no">eZ Systems</a>, for PHPers Silesia Meetup <a href="http://ez.no/About-eZ/Events/Events/PHPers-Silesia-Meetup">January 15th 2015</a></small></em>
+						<small style="color:#ccc">TL;DR; A Content framework & Editorial solution, accelerating your app development.</small>
+
+						<br>
+						<small style="color:#ccc"><small>This content is available under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a>, images may be under separate licenses.</small></small>
+					</p>
+				</section>
+
+
+				<!-- section data-markdown>
+					<script type="text/template">
+						## Abstract
+							- What is eZ Platform (A rewrite of eZ Publish to be a super extensible CMS built on Symfony)
+								- What is Symfony and why?
+							- Why?
+								- Content is data, content is everything
+								- Extensisbility
+						        - Strong Multi channel cababilities (responsive text and images)
+								- Extremly powerfull permision system (Also extendable as of eZ Platform)
+
+							- Examples of Template & controller override and other extension points
+							- ?Demo REST API?
+							- Demo Platform UI
+					</script>
+				</section -->
+
+				<section>
+					<section>
+						<h2>What is eZ Platform?</h2>
+					</section>
+
+					<section>
+						<h2>Some Background</h2>
+						<p>
+							eZ Platform is a next generation "eZ Publish"; <em>A feature rich, extensible, enterprise open
+							source CMS/CMF solution.</em>
+						</p>
+						<p class="fragment">
+							To grow for the future it was decided we wanted to modernize the framework
+							and what we build upon.
+						</p>
+						<p class="fragment">
+							Work on eZ Platform started winter 2011 and has been part of eZ Publish Platform 5.x since fall
+							2012, Symfony powered.
+						</p>
+						<p class="fragment">
+							Continuously improved since then, and this year ready to become what was
+							earlier referred to as "eZ Publish 6.0".
+						</p>
+					</section>
+
+					<!-- section data-markdown>
+						<script type="text/template">
+							## eZ Publish (legacy) vs eZ Platform
+
+							eZ Platform aims to improve on concepts in eZ Publish, and non functional features like:
+
+							- Scalability - _Far(TBD) beyond 2 million content ojects_
+							- Extensibility - _Normal use cases simple, advance possible_
+							- Multi channel - _Full Content reuse across channels_
+							- Modern *content* framework - _For devs, editors, designers_
+						</script>
+						<aside class="notes">
+						</aside>
+					</section -->
+
+					<section data-markdown>
+						<script type="text/template">
+							## What does it build upon?
+
+							<p align="left">Builds on top of the Symfony _Full stack_, as opposed to just _Components_*,
+							which enables use of all Symfony _Bundles_.</p>
+
+							<p align="left">Notable bundles used in eZ Platform:</p>
+
+							- FosHTTPCache - _Vary by user, and purge by location id_
+							- DoctrineDBAL - _Support for most SQL Database engines_
+							- Stash - _Database cache on disk, memcached, redis, .._
+							- FlySystem - _Storing binary files on disk, NFS, S3, .._
+							- _...and many more_
+
+							<small style="color: #555;">_\* Which is what __Drupal8__ will use, coming later in 2015_</small>
+						</script>
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section style="background-color: rgba(255,255,255,0.97);" data-background="http://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Symfony2.svg/2000px-Symfony2.svg.png" data-markdown>
+						<script type="text/template">
+							## What is Symfony2<small>*</small>? <small>[Further reading](http://fabien.potencier.org/article/49/what-is-symfony2)</small>
+
+							- Set of modern _Components_ with very high code standard
+							 - Makes the developer a better programmer as it uses many enterprise code patterns
+							 - Highly inspired by Spring (Java) Framework, adapted for the strenghts of PHP
+							- It has <small>(in PHP)</small> a unique approach to <small>(HTTP)</small>Cache
+							 - A request/resonse framework
+							 - Splits the page elements into sub requests
+							 - Maps perfectly to HTTP (and especially ESI)
+
+							<small style="color: #555;">_\* __3.0__ as of 2016_</small>
+						</script>
+						<aside class="notes">
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section data-background="http://ez.no/var/ezflow_site/storage/images/home/blog/the-value-of-the-ez-publish-platform-enterprise-subscription/425724-7-eng-GB/The-Value-of-the-eZ-Publish-Platform-Enterprise-Subscription.png">
+						<h2>Why eZ Platform?</h2>
+						<p>
+							<em>Concepts</em><br><br><br>
+						</p>
+					</section>
+
+					<section style="background-color: rgba(255,255,255,0.98);" data-background="http://upload.wikimedia.org/wikipedia/commons/3/32/Lego_Color_Bricks.jpg" data-markdown>
+						<script type="text/template">
+							## "Everything" is Extensible
+
+							Provides several extension points, **some**:
+
+							- Extend Content model with new _FieldTypes_
+							- _Override_ the view of a given content type
+							 - Either just the template
+							 - Or the whole Content/Location ViewController
+							- Listen to API _Signals_
+							- Future: Index external documents
+
+							_+ Everything inhereted by packages we use_
+						</script>
+						<aside class="notes">
+							"Everything" refers to the fact that eZ Platform aims to provide a lot of extension points out
+							of the box, and what is not provided is still possible.
+						</aside>
+					</section>
+
+					<section style="background-color: rgba(255,255,255,0.98);" data-background="http://upload.wikimedia.org/wikipedia/commons/d/d7/Carina_Dwarf_Galaxy.jpg" data-markdown>
+						<script type="text/template">
+							## "Everything" is Content
+
+							- You model your Content in differnt kind of types
+							 - _Article, Blog, Page, Forum post, Movie, Customer.._
+							- Each ContentType is modeled with fields (attributes)
+							 - Picking among 27+ buily-in _FieldTypes_
+							 - Or growing number of community types
+							 - Or write your own using solid interfaces
+						</script>
+						<aside class="notes">
+							"Everything" refers to the fact that the content model can be used for anything, but best suited
+							for anything editorial, which benefits from versioning and fine grained permission support
+
+							Data which is very frequently updated or very active user generated content is use cases we
+							usually recommend to use custom data structures for within using standard Symfony practises.
+						</aside>
+					</section>
+					<section style="background-color: rgba(255,255,255,0.98);" data-background="http://concinnitymarketing.com/wp-content/uploads/2012/12/multi-channel-main.jpg" data-markdown>
+						<script type="text/template">
+							## Content is reusable
+
+							- Stored in a decoupled & semantic format
+							 - No HTML tag soupe in your database
+							 - Better security on what is allowed
+							 - Better controll of styling your content
+							- Cable of targeting any device & any _channel_
+							 - _Desktop, mobile, tv, print, ..._
+						</script>
+						<aside class="notes">
+							This point depends on implementation of FieldTypes, but everyone we bundle with eZ Platform
+							aims to allow for content reuse and responsive approaches.
+						</aside>
+					</section>
+
+					<section style="background-color: rgba(255,255,255,0.98);" data-background="http://www.the-tech-tutorial.com/wp-content/uploads/2011/02/multi_1.jpg" data-markdown>
+						<script type="text/template">
+							## Multi site, Multi Repository
+
+							By using a concept called _SiteAccess_ and _SiteGroups_:
+
+							- Serveral variants of the same web site
+							 - languages
+							 - designs
+							 - channels
+							- Several web sites in same repository for content reuse
+							- Several repositories (databases) with full seperation
+						</script>
+						<aside class="notes">
+
+						</aside>
+					</section>
+
+
+					<section style="background-color: rgba(255,255,255,0.98);" data-background="http://www.helpwithtalking.com/_readwritedata/_blog_attachment/dd995cd2-67f8-4625-88be-c8d3af3a0b8d.jpg" data-markdown>
+						<script type="text/template">
+							## Full i18n support
+
+							- Content support up to 62 languages
+							- System has a advance language fallback system
+							 - Possible to fallback to english on french site if you want
+							 - Possible to fallback to fre-FR on fre-CA site
+							 - ...
+						</script>
+						<aside class="notes">
+
+						</aside>
+					</section>
+
+					<section style="background-color: rgba(255,255,255,0.99);" data-background="http://share.ez.no/var/community/storage/images/media/images/1_permission_system_components_large2/317858-1-eng-GB/1_permission_system_components_large.png" data-markdown>
+						<script type="text/template">
+							## Advance content permission
+
+							Fine grained permission system
+
+							- Users
+							- User Groups
+							- Roles Assignable to:
+							 - Users _and_ User Groups
+							 - Optionally with _Limitation_
+							- Roles consists of Policies
+							 - Optionally limited by _Limitation**s**_
+						</script>
+						<aside class="notes">
+
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section data-background="http://ez.no/var/ezflow_site/storage/images/home/blog/the-value-of-the-ez-publish-platform-enterprise-subscription/425724-7-eng-GB/The-Value-of-the-eZ-Publish-Platform-Enterprise-Subscription.png">
+						<h2>Why eZ Platform?</h2>
+						<p>
+							<em>From eZ Publish 5.x perspective</em><br><br><br>
+						</p>
+					</section>
+
+					<section style="background-color: rgba(255,255,255,0.97);" data-markdown>
+						<script type="text/template">
+							## From eZ Publish to eZ Platform
+
+							<p align="left">eZ Platform is what has been refered to as _new/Symfony/6.x_ stack in
+							eZ Publish Platform 5.x, since 2012.</p>
+
+							<p align="left">Migration from 5.x is therefore straighforward, and we will provide upgrade process just
+							like any 5.x release had.</p>
+						</script>
+					</section>
+
+					<section style="background-color: rgba(255,255,255,0.97);" data-markdown>
+						<script type="text/template">
+							## What eZ Platform provides
+
+							<p align="left">eZ Platform provides new features progressivly in the next release__s__, now
+							that we no longer are limited by legacy stack:</p>
+
+							- New Editorial UI
+							- Solr/ElasticSearch powered search engine <small>_Part will be backported_</small>
+							- Enhancements to Content Model
+							- Improvments to Cluster system
+							- Iterativly improved performance
+							- Improved Content (data) scalability
+						</script>
+					</section>
+
+					<section style="background-color: rgba(255,255,255,0.97);" data-markdown>
+						<script type="text/template">
+							## What about legacy?
+
+							<p align="left">Legacy is not bundled anymore but available via _unsupported_ LegacyBridge.</p>
+
+							<p align="left">_But_ you'll need to migrate all content centric code
+							to take advantage of new features on previous slide, __&__ changes to:</p>
+
+							- XmlText -> RichText
+							- eZ Flow -> "eZ Page2" <small>_(temporary name)_</small>
+
+							<p align="left">
+								_While you can use legacy modules with LegacyBridge, we highly recommend 5.4
+								/ 2014.11 if you need transition time._</p>
+						</script>
+					</section>
+				</section>
+
+				<!-- section>
+					<section data-background="http://ez.no/var/ezflow_site/storage/images/home/blog/the-value-of-the-ez-publish-platform-enterprise-subscription/425724-7-eng-GB/The-Value-of-the-eZ-Publish-Platform-Enterprise-Subscription.png">
+						<h2>Why eZ Platform?</h2>
+						<p>
+							<em>From Symfony perspective</em><br><br><br>
+						</p>
+					</section>
+
+					<section style="background-color: rgba(255,255,255,0.97);" data-markdown>
+						<script type="text/template">
+							## TODO: write
+						</script>
+						<aside class="notes">
+						</aside>
+					</section>
+				</section -->
+
+				<section>
+					<section>
+						<h2>Overview of Architecture</h2>
+					</section>
+
+					<section data-background="https://doc.ez.no/download/attachments/11403666/ez5-architecture-platform.png">
+						<p><small><a href="https://doc.ez.no/pages/viewpage.action?pageId=11403666">Doc</a></small></p>
+					</section>
+
+					<section data-background="https://doc.ez.no/download/attachments/25985700/Server%20setup.png?version=2&modificationDate=1421335528843&api=v2">
+						<p><small><a href="https://doc.ez.no/display/EZP/Clustering">Doc</a></small></p>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Code Examples</h2>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							## Overriding tempalte: [Doc](https://doc.ez.no/display/EZP/How+to+use+a+custom+controller+to+display+a+content+or+location)
+
+							Example overriding template used for a article
+							```yml
+							template: AcmeTestBundle:full:article.html.twig
+							match:
+								Identifier\ContentType: [article]
+							```
+
+							Template:
+							```jinja
+							{% extends noLayout ? viewbaseLayout : "eZDemoBundle::pagelayout.html.twig" %}
+
+							{% block content %}
+							    <h1>{{ ez_content_name( content ) }}</h1>
+							    {{ ez_render_field( content, 'body' ) }}
+								{# some custom logic here #}
+							{% endblock %}
+							```
+						</script>
+						<aside class="notes">
+							Go over what is going on here, including fact that twig functions used takes current
+							language and available language into account.
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							## Signal listening: [Doc](https://doc.ez.no/display/EZP/How+to+listen+to+Core+events)
+
+							Setting up a class to listen to Publishing signal:
+							```yml
+							services:
+							    my.onpublish_slot:
+							        class: %my.onpublish_slot.class%
+							        tags:
+							            - {
+											name: ezpublish.api.slot,
+											signal: ContentService\PublishVersionSignal
+										}
+							```
+
+							Main part of the class:
+							```php
+							public function receive( Signal $signal )
+							{
+								if ( !$signal instanceof ContentService\PublishVersionSignal ) {
+									return;
+								}
+
+								// Do stuff with $signal->contentId & $signal->versionNo
+							}
+							```
+						</script>
+					</section>
+				</section>
+
+				<section>
+					<h2>Demo time</h2>
+
+					<p><em>For readers see last slide!</em></p>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					## _Fin!_
+
+					<p align="left">Thanks for reading/attending, further info on __eZ Platform__:</p>
+
+					- 1.0-alpha1 avaiable as __2015.01__ on [share.ez.no](http://share.ez.no), and composer, around end of month. Stable around summer.
+					- For testing Platform and Platform UI out today, _or just reading on current status_, check out [share.ez.no post](http://share.ez.no/blogs/core-development-team/platformui-december-2014-status).
+
+					<p align="left">__eZ Platform__ will launch together with [__eZ Studio__](http://ez.no/Blog/eZ-Publish-Platform-5.4-is-Almost-Here-What-s-Coming-Next):</p>
+
+					- Targets editors, editorial teams & managers
+					- Commercial software with ties to value adding services
+					- Builds on top of the _100% open source_ __eZ Platform__
+					- Available in FTR<small>__F__ast __T__rack __R__elease</small> & LTS<small>__L__ong __T__erm __S__upported</small> flavours
+					</script>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="../../reval.js-3.1/lib/js/head.min.js"></script>
+		<script src="../../reval.js-3.1/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../../reval.js-3.1/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../reval.js-3.1/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../reval.js-3.1/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../reval.js-3.1/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../reval.js-3.1/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../reval.js-3.1/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
