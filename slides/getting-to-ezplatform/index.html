@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introducing eZ Platform</title>
+
+		<meta name="description" content="Introducing eZ Platform">
+		<meta name="author" content="André Rømcke">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link rel="icon" type="image/x-icon" href="../../stylesheets/favicon.ico" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="../../reval.js-3.1/css/reveal.css">
+		<link rel="stylesheet" href="../../reval.js-3.1/css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="../../reval.js-3.1/lib/css/zenburn.css">
+
+        <!-- Add some transparent background to slide to make it more readable despite bg image -->
+        <style media="all" type="text/css">
+            .reveal .slides {
+                background-color: rgba(0, 0, 0, .55);
+                border: 1em transparent dashed;
+            }
+            .reveal section img {
+                background: transparent;
+                border: 0;
+            }
+            .reveal table td {
+                border-bottom: 0 none;
+            }
+        </style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../reval.js-3.1/css/print/pdf.css' : '../../reval.js-3.1/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../../reval.js-3.1/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+    <!-- Press '?' for keyboard shortcuts -->
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section data-markdown="README.md"
+                         data-separator="^\n---\n$"
+                         data-separator-vertical="^\n--\n$"
+                         data-notes="^Note:"
+                         data-charset="utf-8">
+                </section>
+            </div>
+
+		</div>
+
+		<script src="../../reval.js-3.1/lib/js/head.min.js"></script>
+		<script src="../../reval.js-3.1/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                //
+
+                // Parallax background image
+                parallaxBackgroundImage: 'http://upload.wikimedia.org/wikipedia/commons/c/c7/Mauna_Kea_Sunset_-_Flickr_-_Joe_Parks.jpg',
+
+                // Parallax background size
+                parallaxBackgroundSize: '3107px 2037px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+
+                parallaxBackgroundVertical: '1',
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../../reval.js-3.1/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../../reval.js-3.1/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../reval.js-3.1/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../../reval.js-3.1/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../../reval.js-3.1/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../../reval.js-3.1/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
