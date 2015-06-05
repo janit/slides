@@ -403,12 +403,17 @@ public function receive( Signal $signal )
 
 *Go to [eZ Platform repository](https://github.com/ezsystems/ezplatform/blob/master/INSTALL.md) to quickly test it yourself.*
 
-<br>
 
-| Twitter:                                        | Meetup:                                                            |
-|-------------------------------------------------|--------------------------------------------------------------------|
-| [@ezsystems](https://twitter.com/ezsystems)     | [eZ Meetup Oslo](http://www.meetup.com/eZ-Oslo-Meetup)             |
-| [@ezcommunity](https://twitter.com/ezcommunity) | [eZ Meetup Paris](http://www.meetup.com/ezpublish-paris-meetup)    |
-| [@andrerom](https://twitter.com/andrerom)       | [eZ Meetup Lyon](http://www.meetup.com/Lyon-eZ-Publish-Meetup)     |
-|                                                 | [eZ Meetup New York](http://www.meetup.com/newyorkezusercommunity) |
-|                                                 | [eZ Meetup Köln](http://www.meetup.com/Koln-eZ-Publish-Meetup/)    |
+-------------------
+
+Web: [ez.no](http://ez.no), [Community](http://share.ez.no), [eZ Conference NYC 2015](http://ez.no/Blog/eZ-Conference-Early-Bird-Extension-Upcoming-Speaker-Announcement)<br>
+Twitter:  [@ezsystems](https://twitter.com/ezsystems), [@ezcommunity](https://twitter.com/ezcommunity), [@andrerom](https://twitter.com/andrerom), ..<br>
+Mettups: [Oslo](http://www.meetup.com/eZ-Oslo-Meetup), [Paris](http://www.meetup.com/ezpublish-paris-meetup),
+ [Lyon](http://www.meetup.com/Lyon-eZ-Publish-Meetup), [New York](http://www.meetup.com/newyorkezusercommunity),
+ [Köln](http://www.meetup.com/Koln-eZ-Publish-Meetup/), [San Francisco](http://www.meetup.com/San-Francisco-eZ-Publish-Meetup/), ..<br>
+Blogs: [What to expect from eZ Studio & eZ Platform](http://ez.no/Blog/What-to-Expect-from-eZ-Studio-and-eZ-Platform), [eZ Platform 15.03 is Out. What's Next?](http://ez.no/Blog/New-Release-eZ-Platform-Alpha-15.03)<br>
+
+
+-------------------
+
+See more slides on [http://ezsystems.github.io/slides/](http://ezsystems.github.io/slides/)
