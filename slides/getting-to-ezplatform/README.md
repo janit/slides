@@ -4,7 +4,7 @@
 *[Symfony Meetup Oslo - 2<small><sup>nd</sup></small> of June 2015](http://www.meetup.com/eZ-Oslo-Meetup/events/222305799/)*
 
 <small><br>
-<br>By [André Rømcke](https://github.com/andrerom) / [@andrerom](http://twitter.com/andrerom)
+<br>By [André R.](https://github.com/andrerom) / [@andrerom](http://twitter.com/andrerom)
 
 ---
 
