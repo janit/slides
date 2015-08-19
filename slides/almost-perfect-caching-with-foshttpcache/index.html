@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Introducing eZ Platform</title>
+		<title>Almost perfect caching with FosHttpCache</title>
 
 		<meta name="description" content="Introducing eZ Platform">
 		<meta name="author" content="André Rømcke">
@@ -24,12 +24,24 @@
 
         <!-- Add some transparent background to slide to make it more readable despite bg image -->
         <style media="all" type="text/css">
-            /*body { background-color: #fff; }
-
-            .reveal .slides {
-                background-color: rgba(0, 0, 0, .8);
-                border: 1em transparent dashed;
-            }*/
+            /*body { background-color: #fff; }*/
+            .reveal .slides::after {
+                content: "";
+                background-image: url("imgs/eZ-Logo.svg");
+                background-size: 20%;
+                background-position: 100% 100%;
+                background-repeat: no-repeat;
+                opacity: 0.2;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                position: absolute;
+                z-index: -1;
+            }
+            .reveal .slides:hover::after {
+                opacity: 0.8;
+            }
             .reveal section img {
                 background: transparent;
                 border: 0;
@@ -85,8 +97,6 @@
 				center: true,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-                //
 
                 // Parallax background image
                 //parallaxBackgroundImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Proxy_concept_en.svg/2000px-Proxy_concept_en.svg.png',
