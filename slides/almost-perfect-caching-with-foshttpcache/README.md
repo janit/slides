@@ -66,6 +66,10 @@ Notable customers: MadSack, RedBull, Economist, QuickSilver, several universitie
  - Commercial, adds features for editorial organizations
 
 
+Note:
+Platform has an arch. that brings increased performance and scalability, while also allowing us to 
+further enhance this in the future without breaking the API's exposed to developer code.
+
 ---
 
 # Big Picture
@@ -75,9 +79,8 @@ Notable customers: MadSack, RedBull, Economist, QuickSilver, several universitie
 
 ### TL;DR; We want cache to become transparent!
 
-*TODO: The big idea as somewhat described on current Symfony slide*
-- Cache tagging as the integration point
-- 
+- Actively tagging cache items to easily expire relevant items on any operation <!-- .element: class="fragment" -->
+- Across different cache systems enabling great performance & scalability  <!-- .element: class="fragment" -->
 
 ---
 
