@@ -12,8 +12,6 @@ By [André R.](https://github.com/andrerom) / [@andrerom](http://twitter.com/and
 Note:
 Hi.. I'm André, and I'm honored to open this years FrOSCon!
 There are a lot of interesting topics coming up so hope your all up and awake ;)
-..I'm not awake btw, so feel free to correct me if I don't make sense :P
-
 
 ---
 
@@ -29,7 +27,7 @@ There are a lot of interesting topics coming up so hope your all up and awake ;)
  - 2005: PHP & Open Source 
  - 2006: eZ
  - Contributing* to: eZ, Symfony, Composer, FOS, PHP-FIG, ..
- - Somewhat familiar with Frontend, Agility, Test Strategy, Hiring, ..
+ - Somewhat familiar w/ Frontend, Agility, Test Strategy, Hiring..
 - Other interests: Music, Bicycling, Skiing, Hiking, ..
 
 <br>
@@ -38,7 +36,6 @@ There are a lot of interesting topics coming up so hope your all up and awake ;)
 
 
 Note:
-Coding: Started by being curies about how web pages like 3dfx.com worked. 
 PHP: Seriously since 2008 after unwilling mentoring by Derick Rethans & others at eZ, as I started to contribute to Core
 Contribution: Besides eZ I currently try to contribute to Symfony, FriendsOfSymfony, ~~Node.js~~~
 eZ: Been in various roles; Consultant, Project Lead, Engineer, Scrum/Kanban master, VP Engineering
@@ -48,7 +45,7 @@ Trivia: Remembers 5 year old conversation/code-change, but not a name 30 seconds
 
 ## About [eZ Platform](https://github.com/ezsystems/ezplatform)
 
-- `eZ Platform` is next generation **`eZ Publish`**, aka `6.0`
+- `eZ Platform`, earlier reffered to as  **`eZ Publish 6.0`**
 - Introduced as part of **`eZ Publish Platform 5.0`**
 - Builds upon, extends, & contributes to Symfony
 - Coming with new UI and on it's own this fall
@@ -90,7 +87,7 @@ Notable customers: MadSack, RedBull, Economist, QuickSilver, several universitie
 ### TL;DR; We want cache to become transparent & scalable!
 
 - In an application like a CMS, cache is needed <!-- .element: class="fragment" -->
-- Cache is complex, but we want to "hide" that complexity <!-- .element: class="fragment" -->
+- Cache is complex, but we want to "hide" that <!-- .element: class="fragment" -->
  - While still giving developers full control to customize
 - All while also trying to make it easy to scale <!-- .element: class="fragment" -->
 
@@ -101,7 +98,7 @@ Notable customers: MadSack, RedBull, Economist, QuickSilver, several universitie
 ### How??
 
 - Actively tagging cache items with entity meta data <!-- .element: class="fragment" -->
-- Supporting different cache systems <!-- .element: class="fragment" -->
+- Supporting several cache systems, for different needs <!-- .element: class="fragment" -->
 - Stale/Graceful cache handling by default in HTTP layer <!-- .element: class="fragment" -->
 
 
@@ -165,6 +162,8 @@ Far Far away on previous slide.
 <!-- .slide: data-background="imgs/wtf_cat.jpg" data-background-transition="concave" data-transition="fade-in fade-out" -->
 ## Architecture WTF
 
+Very flexible, but:
+
 - Weak integration with Content Repository <!-- .element: class="fragment" -->
 - Weak integration with Reverse Proxies <!-- .element: class="fragment" -->
 
@@ -181,8 +180,8 @@ In Köln in May 2012 with eZ, QaFoo & Benjamin Eberlei:
 
 ## Symfony2
 
+- Standardizes on HTTP for cache, fully customizable <!-- .element: class="fragment" -->
 - Native ESI fragments theoretically perfect for blocks <!-- .element: class="fragment" -->
-- Also for "content view cache" block <!-- .element: class="fragment" -->
 - Varnish powering these > Insane performance <!-- .element: class="fragment" -->
 
 
@@ -198,12 +197,13 @@ In Köln in May 2012 with eZ, QaFoo & Benjamin Eberlei:
 
 ## Extending Symfony2
 
-In 2014 FosHttpCache enters, with features from Liip, Driebit, eZ, JoliCode and others, mainly:
+In 2014 FosHttpCache enters based on similar ideas @ Liip, Driebit, eZ, JoliCode and others. Mainly:
 
 - Entity awareness > Tag Cache with entity identifier(s) <!-- .element: class="fragment" -->
  - Example header: ```X-Cache-Tags: location-44, ..``` <!-- .element: class="fragment" -->
 - User awareness > Vary Cache by User rights/context <!-- .element: class="fragment" -->
  - Example header: ```Vary: X-User-Context-Hash``` <!-- .element: class="fragment" -->
+- Most featurs across Varnish, Sf HttpCache, & Nginx <!-- .element: class="fragment" -->
 
 
 Note:
@@ -236,59 +236,7 @@ eZ joined in 2014 and contributed User awareness.
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
 ### 4/4 "Entity Aware": Ban
 
-
---
-
-![Boom! Problem Solved](http://cdn.meme.am/instances/58459797.jpg)
-
-Enter FOSHttpCache from several parties, feature parity and now used by eZ also as of last year.
-
-
-## Are we done Yet? <!-- .element: class="fragment" -->
-
---
-
-### Houston, more problems!
-#### Current state:
-
-- No multi tagging with Symfony HttpCache <!-- .element: class="fragment" -->
-- Varnish BAN not graceful > Dog-piling under load!  <!-- .element: class="fragment" -->
-
 Note:
-no multi tagging makes it hard to reliably inline several esi requests to avoid the ESI perf issue.
-dog-piling aka Cache stamped when using BAN which is used for purging cache by tags.
-
----
-
-
-# Next
-
-
---
-
-### Tags
-
-<small>*To be able to avoid to many ESI request when using Symfony HttpCache we need multi tagging to reliably clear cache represeting several entities.*</small>
-
-- Abstracting Tags\* from Varnish <!-- .element: class="fragment" -->
-- Add support in Symfony HttpCache <!-- .element: class="fragment" -->
-
-<small class="fragment">\* [Abstracting tags PR](https://github.com/FriendsOfSymfony/FOSHttpCache/pull/237)</small>
-
---
-
-
-### Graceful Ban
-
-<small>*To be able to have graceful cache also when purging/expiring by tag, currently using: BAN*</small>
-
-- Varnish is not adding "SoftBan" anytime soon <!-- .element: class="fragment" -->
-- Potentially own tag handling & use PURGE per URL? <!-- .element: class="fragment" -->
- - Setup Symfony HttpCache to just cache tags, expiry & urls? <!-- .element: class="fragment" -->
- - Use this for PURGEs, & custom VCL rules to expire URLS? <!-- .element: class="fragment" -->
-
-Note:
-SoftBan: If you have connections, make sure to put pressure on Varnish ;)
 Yes, Varnish allows BAN using custom VCL:
 ```
     if (req.method == "BAN") {
@@ -312,11 +260,69 @@ Yes, Varnish allows BAN using custom VCL:
         return (synth(200, "Banned"));
 ```
 
+
+--
+
+![Boom! Problem Solved](http://cdn.meme.am/instances/58459797.jpg)
+
+
+## Or? <!-- .element: class="fragment" -->
+
+--
+
+### Houston, more problems!
+#### Current state:
+
+- Multi tagging only with Varnish <!-- .element: class="fragment" -->
+- Varnish BAN not graceful > Dog-piling under load!  <!-- .element: class="fragment" -->
+
+Note:
+no multi tagging makes it hard to reliably inline several esi requests to avoid the ESI perf issue.
+dog-piling aka Cache stamped when using BAN which is used for purging cache by tags.
+
+---
+
+
+# Next
+
+
+--
+
+### Tags
+
+<small>*To be able to avoid to many ESI request when using Symfony HttpCache we need multi tagging to clear cache representing several entities.*</small>
+
+- Abstracting Tags\* from Varnish <!-- .element: class="fragment" -->
+- Add support in Symfony HttpCache <!-- .element: class="fragment" -->
+- Should also be possible for Nginx <!-- .element: class="fragment" -->
+
+<small class="fragment">\* [Abstracting tags PR](https://github.com/FriendsOfSymfony/FOSHttpCache/pull/237)</small>
+
+--
+
+
+### Graceful Ban
+
+<small>*To be able to have graceful cache also when purging/expiring by tag, currently using: BAN*</small>
+
+- Varnish is not adding "SoftBan" anytime soon <!-- .element: class="fragment" -->
+- Potentially own tag handling & use PURGE per URL? <!-- .element: class="fragment" -->
+ - Setup Symfony HttpCache to just cache tags, expiry & urls? <!-- .element: class="fragment" -->
+ - Use this for PURGEs, & custom VCL rules to expire URLS? <!-- .element: class="fragment" -->
+
+Note:
+SoftBan: If you have connections, make sure to put pressure on Varnish ;)
+
 --
 
 <!-- .slide: data-background="imgs/Cache_tag_purge.png" data-background-size="1280px" data-background-transition="concave" data-transition="fade-in fade-out" -->
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
-### 2/2: Purge
+### Tags Purging
+
+Note:
+Async since number of url's across number of Varnish servers might be a low, Async in this case refer to allowing ques
+to handle the purging, can be Symfony kernel.terminate out of the box allowing other bundles to extend that.
+Varnish here can be any Reverse Proxy cache supporting purging/expiry.
 
 
 --
