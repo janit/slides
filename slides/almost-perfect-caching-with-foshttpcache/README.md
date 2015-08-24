@@ -9,6 +9,11 @@ By [André R.](https://github.com/andrerom) / [@andrerom](http://twitter.com/and
 *With special thanks to creators of FOSHttpCache: [@dbu](https://github.com/dbu), [@ddeboer](https://github.com/ddeboer), [@lolautruche](github.com/lolautruche), others [\[1\]](https://github.com/FriendsOfSymfony/FOSHttpCache/graphs/contributors) [\[2\]](https://github.com/FriendsOfSymfony/FOSHttpCacheBundle/graphs/contributors)*
 </small>
 
+<div style="font-size: 50%; text-align: left; color: #999; position: absolute; bottom: -40%; left: 0;">
+<em>Press `?` for info on how to navigate these slides<em>
+</div>
+
+
 Note:
 Hi.. I'm André, and I'm honored to open this years FrOSCon!
 There are a lot of interesting topics coming up so hope your all up and awake ;)

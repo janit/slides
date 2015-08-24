@@ -5,6 +5,11 @@
 
 <small><br>
 <br>By [André R.](https://github.com/andrerom) / [@andrerom](http://twitter.com/andrerom)
+</small>
+
+<div style="font-size: 50%; text-align: left; color: #999; position: absolute; bottom: -25%; left: 0;">
+<em>Press `?` for info on how to navigate these slides<em>
+</div>
 
 ---
 
