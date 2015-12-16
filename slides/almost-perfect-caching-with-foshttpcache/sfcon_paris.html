@@ -29,21 +29,26 @@
                 content: "";
                 background-image: url("imgs/eZ-Logo.svg");
                 background-size: 80%;
-                background-position: center 13%;
+                background-position: 15% 13%;
                 background-repeat: no-repeat;
 				background-color: #ffffff;
-				border-radius:  50%;
-				border: 3px solid #656565;
-                bottom: -8%;
-                right: 0;
-				width: 10%;
+				border-radius:  20%;
+				border: 2px solid #888;
+                bottom: -6%;
+                right: -2%;
+				width: 11%;
 				height: 5rem;
                 position: absolute;
                 z-index: 1;
-				transition: bottom 0.5s;
+				transition: bottom 0.5s, right 0.5s;
             }
 			.reveal:hover::after {
-				bottom: -10%;
+				bottom: -7.5%;
+				right: -7.5%;
+			}
+			.reveal .controls {
+			    right: auto;
+			    left: 10px;
 			}
 			.reveal section h1, .reveal section h2 {
 				background-color: rgba(250, 250, 250, 0.5);
