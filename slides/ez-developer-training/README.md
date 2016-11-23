@@ -539,57 +539,86 @@ return new LocationQuery([
 
 ## Create an import script
 
-Create a draft with 
+- Create a draft with 
+```
 $contentService->createContent(
     $contentCreateStruct,
     array($locationCreateStruct)
 );
-Publish version
-$contentService->publishVersion($draft->versionInfo);
+```
+- Publish version
+ - $contentService->publishVersion($draft->versionInfo);
 
-
-
-#### (Step 7)
-
---
-
-## Create an import script
-
-- a
-- b
-- c
-
-#### (Step 7)
-
---
-
-## Create an import script
-
-- a
-- b
-- c
-
-#### (Step 7)
-
---
-
-## Create an import script
-
-- a
-- b
-- c
 
 #### (Step 7)
 
 ---
-
 
 # Explore Landing Page management
 #### (Step 8)
 
 --
 
-## FOO BAR
+## Explore Landing Page management
+
+- Switch rendering ride list to folder location id
+- Match render root location based on class:
+ - Identifier\ContentType: [landing_page]
+- Create template
+ - app/Resources/full/landing_page.html.twig
+- Observe ”page” field:
+ - {{ dump(content.fields.page) }}
+
+#### (Step 8)
+
+--
+
+## Explore Landing Page management
+
+- Add a content list block using admin & page tab
+ - Parent: All rides
+ - Limit: 5
+ - Type: Bike rides
+
+- Override default template
+ - EzSystemsLandingPageFieldTypeBundle:blocks:contentlist.html.twig
+
+
+#### (Step 8)
+
+--
+
+## Explore Landing Page management
+
+- a
+- b
+- c
+
+#### (Step 8)
+
+--
+
+## Explore Landing Page management
+
+- a
+- b
+- c
+
+#### (Step 8)
+
+--
+
+## Explore Landing Page management
+
+- a
+- b
+- c
+
+#### (Step 8)
+
+--
+
+## Explore Landing Page management
 
 - a
 - b
