@@ -583,6 +583,23 @@ $contentService->createContent(
 - Override default template
  - EzSystemsLandingPageFieldTypeBundle:blocks:contentlist.html.twig
 
+#### (Step 8)
+
+--
+
+## Explore Landing Page management
+
+- Add an import configuration
+  - layouts.yml
+- Overwrite layout configuration
+```
+ez_systems_landing_page_field_type:
+    blocks:
+        contentlist:
+            views:
+                default:
+                    template: blocks/contentlist.html.twig  
+```
 
 #### (Step 8)
 
@@ -590,40 +607,9 @@ $contentService->createContent(
 
 ## Explore Landing Page management
 
-- a
-- b
-- c
+- In the block template, observe what is passed
+ - `{{ dump() }}`
+- Loop a list with title and link
+  - `{{ path(item.location) }}`
+  - `{{ ez_content_name(item.content) }}`
 
-#### (Step 8)
-
---
-
-## Explore Landing Page management
-
-- a
-- b
-- c
-
-#### (Step 8)
-
---
-
-## Explore Landing Page management
-
-- a
-- b
-- c
-
-#### (Step 8)
-
---
-
-## Explore Landing Page management
-
-- a
-- b
-- c
-
-#### (Step 8)
-
----
